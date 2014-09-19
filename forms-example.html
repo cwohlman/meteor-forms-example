@@ -1,0 +1,22 @@
+<head>
+  <title>forms-example</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> myForm}}
+</body>
+
+<template name="myForm">
+	{{#with item}}
+	  <p>Welcome to deps forms you are editing: {{name}}</p>
+	  <form>
+	  	{{#with field 'name'}}
+	  		<label>{{name}}: {{value}}</label>
+	  		<input type="text" name="{{name}}" value="{{value}}">
+	  	{{/with}}
+	  	<input type="submit" value="save">
+	  </form>
+	{{/with}}
+</template>
